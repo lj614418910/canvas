@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#canvas{
+			display: block;
+			margin: 50px auto;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="1300" height="1300"></canvas>
+	<script>
+
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+
+		context.lineWidth = 5;
+		var a = 0;
+
+		timer = setInterval(function () {
+			context.clearRect (0,0,1300,1300);
+
+			a++;
+			
+
+			for (var i = 0; i < 60; i++) {
+				context.beginPath();
+				context.arc(600,600,600-(i*10),0+i/7+a,1*Math.PI+i/7+a);
+				context.strokeStyle = "#000";
+				context.stroke();
+			};
+
+			for (var i = 0; i < 60; i++) {
+				context.beginPath();
+				context.arc(600,600,595-(i*10),0,2*Math.PI,true);
+				context.strokeStyle = "#aaa";
+				context.stroke();
+			};
+
+
+
+			
+		},100);
+		
+
+
+		
+
+
+		
+
+
+
+
+	</script>	
+</body>
+</html>
